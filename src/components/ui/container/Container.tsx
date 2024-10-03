@@ -1,7 +1,7 @@
-import React from 'react'
+import style from './Container.module.scss'
 
 export const Container = () => {
   return (
-    <section>Container</section>
+    <section className={style.container}>Container</section>
   )
 }
