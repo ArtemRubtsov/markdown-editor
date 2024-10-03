@@ -1,5 +1,9 @@
+import { Form } from "../../form/Form"
+
 export const Editor = () => {
   return (
-    <main></main>
+    <main>
+        <Form />
+    </main>
   )
 }

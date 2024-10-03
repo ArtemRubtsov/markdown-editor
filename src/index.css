@@ -19,6 +19,9 @@ ul[class],
 ol[class] {
   list-style: none;
 }
+textarea{
+  resize: none;
+}
 a {
   text-decoration: none;
   color: inherit;

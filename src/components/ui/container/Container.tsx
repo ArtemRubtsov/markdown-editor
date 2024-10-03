@@ -1,7 +1,11 @@
 import style from './Container.module.scss'
 
-export const Container = () => {
+type Props = {
+    children: React.ReactNode
+}
+
+export const Container = ({children}: Props) => {
   return (
-    <section className={style.container}>Container</section>
+    <section className={style.container}>{children}</section>
   )
 }
