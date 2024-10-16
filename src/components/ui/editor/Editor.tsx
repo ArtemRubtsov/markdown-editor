@@ -1,12 +1,20 @@
-// import { marked } from "marked"
-import {Form} from '../../form/Form'
+type EditProps = {
+  setMark:  (mark: string) => void;
 
-export const Editor = () => {
-    // const res = marked.parse('# Marked in browser\n\nRendered by **marked**.');
+  mark: string
+}
+
+export const Editor = ({mark, setMark}: EditProps) => {
+  
+
+  const handleMarkdown = (e:  React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMark(e.currentTarget.value)
+  } 
+
   return (
-    <main>
-        {/* {res} */}
-        <Form />
-    </main>
+      <form>
+          <textarea onChange={handleMarkdown} value={mark} name="" id="" />
+      </form>
+
   )
 }

@@ -1,15 +1,12 @@
 import './App.css'
 import { Container } from './components/ui/container/Container'
-import { Editor } from './components/ui/editor/Editor'
+import { Main } from './components/ui/Main/Main'
 
 function App() {
-
   return (
-    <>
       <Container>
-          <Editor />
+        <Main />
       </Container>
-    </>
   )
 }
 
