@@ -5,6 +5,7 @@ import { ImListNumbered } from 'react-icons/im'
 import { IoCodeSlashSharp } from 'react-icons/io5'
 import { CiImageOn } from 'react-icons/ci'
 import s from './header.module.scss'
+import { Icon } from './Icon/Icon'
 
 const icons = [
     <BsTypeH1 />,
@@ -26,10 +27,10 @@ const icons = [
 export const Header = () => {
   return (
     <ul className={s.ul}>     
-      {
+        {
       icons.map((el, i) => {
         return  (
-          <li key={i}>{el}</li>
+          <Icon elem={el} index={i}/>
         )
       })}
     </ul>
