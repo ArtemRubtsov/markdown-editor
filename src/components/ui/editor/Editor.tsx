@@ -14,7 +14,7 @@ export const Editor = ({mark, setMark}: EditProps) => {
 
   return (
       <form className={s.form}>
-          <textarea className={s.textarea} onChange={handleMarkdown} value={mark} name="" id="" />
+          <textarea className={s.textarea} placeholder='Enter your markdown' onChange={handleMarkdown} value={mark} name=""  />
       </form>
 
   )
