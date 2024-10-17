@@ -6,14 +6,16 @@ type EditProps = {
 }
 
 export const Editor = ({mark, setMark}: EditProps) => {
-  
+
   const handleMarkdown = (e:  React.ChangeEvent<HTMLTextAreaElement>) => {
     setMark(e.currentTarget.value)
+    
   } 
 
+  
   return (
       <form className={s.form}>
-          <textarea className={s.textarea} placeholder='Enter your markdown' onChange={handleMarkdown} value={mark} name=""  />
+          <textarea  className={s.textarea} placeholder='Enter your markdown' onChange={handleMarkdown} value={mark} />
       </form>
 
   )
