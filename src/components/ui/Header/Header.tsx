@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsTypeH1, BsTypeH2, BsTypeH3, BsTypeH4, BsTypeH5, BsTypeH6 } from 'react-icons/bs'
 import { FaBold, FaItalic, FaLink, FaList } from 'react-icons/fa'
 import { GrBlockQuote } from 'react-icons/gr'
