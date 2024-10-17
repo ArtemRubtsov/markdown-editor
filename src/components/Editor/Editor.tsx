@@ -10,7 +10,6 @@ export const Editor = ({mark, setMark}: EditProps) => {
 
   const handleMarkdown = (e:  React.ChangeEvent<HTMLTextAreaElement>) => {
     setMark(e.currentTarget.value)
-    
   } 
 
   

@@ -1,6 +1,7 @@
-import { Container } from './components/ui/Container/Container'
-import { Header } from './components/ui/Header/Header'
-import { Main } from './components/ui/Main/Main'
+import { Container } from "./components/Container/Container"
+import { Header } from "./components/Header/Header"
+import { Main } from "./components/Main/Main"
+
 
 function App() {
   return (

@@ -7,8 +7,6 @@ import { CiImageOn } from 'react-icons/ci'
 import { Icon } from './Icon/Icon'
 import s from './header.module.scss'
 
-
-
 const icons = [
   { component: <BsTypeH1 />, key: 'h1' },
   { component: <BsTypeH2 />, key: 'h2' },
