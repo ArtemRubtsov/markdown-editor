@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, useState} from "react";
 import { View } from "../View/View";
 import Markdown from "react-markdown";
-import { Editor } from "../editor/Editor";
+import { Editor } from "../Editor/Editor";
 import s from './main.module.scss'
 
 type MainProps = {
