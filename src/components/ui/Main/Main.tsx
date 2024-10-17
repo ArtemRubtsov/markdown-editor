@@ -5,6 +5,7 @@ import { Editor } from "../Editor/Editor";
 import s from './main.module.scss';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import React from "react";
 
 type CodeParams = {
   children?: React.ReactNode

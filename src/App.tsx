@@ -1,3 +1,4 @@
+import React from 'react'
 import { Container } from './components/ui/Container/Container'
 import { Header } from './components/ui/Header/Header'
 import { Main } from './components/ui/Main/Main'

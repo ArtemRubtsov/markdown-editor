@@ -1,3 +1,4 @@
+import React from 'react';
 import s from './view.module.scss'
 type ViewProps = {
     children:  React.ReactNode;
