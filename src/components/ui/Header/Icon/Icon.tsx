@@ -4,12 +4,12 @@ type IconProps = {
   }
   
   export const Icon = ({ id, icon }: IconProps) => {
-    const handlerElement = (e: React.MouseEvent<HTMLElement>, id: string) => {
+    const handlerElement = ( id: string) => {
       console.log(`Icon clicked: ${id}`)
     }
   
     return (
-      <li onClick={(e) => handlerElement(e, id)}>
+      <li onClick={() => handlerElement(id)}>
         {icon}
       </li>
     )
