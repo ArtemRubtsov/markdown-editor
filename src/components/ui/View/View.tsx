@@ -1,4 +1,4 @@
-
+import s from './view.module.scss'
 type ViewProps = {
     children:  React.ReactNode;
 
@@ -7,6 +7,6 @@ type ViewProps = {
 
 export const View = ({children}: ViewProps) => {
   return (
-    <div>{children}</div>
+    <div className={s.view}>{children}</div>
   )
 }

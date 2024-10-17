@@ -1,6 +1,7 @@
+import s from './edit.module.scss'
+
 type EditProps = {
   setMark:  (mark: string) => void;
-
   mark: string
 }
 
@@ -12,8 +13,8 @@ export const Editor = ({mark, setMark}: EditProps) => {
   } 
 
   return (
-      <form>
-          <textarea onChange={handleMarkdown} value={mark} name="" id="" />
+      <form className={s.form}>
+          <textarea className={s.textarea} onChange={handleMarkdown} value={mark} name="" id="" />
       </form>
 
   )
