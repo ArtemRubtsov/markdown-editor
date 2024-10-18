@@ -1,13 +1,16 @@
 import { Container } from "./components/Container/Container"
 import { Header } from "./components/Header/Header"
 import { Main } from "./components/Main/Main"
+import { MyContextProvider } from "./model/useMark"
 
 
 function App() {
   return (
       <Container>
-        <Header />
-        <Main />
+        <MyContextProvider>
+          <Header />
+          <Main />
+        </MyContextProvider>
       </Container>
   )
 }

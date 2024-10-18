@@ -8,21 +8,23 @@ import { Icon } from './Icon/Icon'
 import s from './header.module.scss'
 
 const icons = [
-  { component: <BsTypeH1 />, key: 'h1' },
-  { component: <BsTypeH2 />, key: 'h2' },
-  { component: <BsTypeH3 />, key: 'h3' },
-  { component: <BsTypeH4 />, key: 'h4' },
-  { component: <BsTypeH5 />, key: 'h5' },
-  { component: <BsTypeH6 />, key: 'h6' },
-  { component: <FaBold />, key: 'bold' },
-  { component: <FaItalic />, key: 'italic' },
-  { component: <GrBlockQuote />, key: 'blockquote' },
-  { component: <ImListNumbered />, key: 'list-numbered' },
-  { component: <FaList />, key: 'list' },
-  { component: <IoCodeSlashSharp />, key: 'code' },
-  { component: <CiImageOn />, key: 'image' },
-  { component: <FaLink />, key: 'link' }
+  { component: <BsTypeH1 />, key: '#'},
+  { component: <BsTypeH2 />, key: '##'},
+  { component: <BsTypeH3 />, key: '###'},
+  { component: <BsTypeH4 />,key: '####'},
+  { component: <BsTypeH5 />, key: '#####'},
+  { component: <BsTypeH6 />, key: '######'},
+  { component: <FaBold />, key: '**'},
+  { component: <FaItalic />, key: '*'},
+  { component: <GrBlockQuote />, key: '>'},
+  { component: <ImListNumbered />, key: '1.'},
+  { component: <FaList />, key: '-'},
+  { component: <IoCodeSlashSharp />, key: '`'},
+  { component: <CiImageOn />, key: '![image]()'},
+  { component: <FaLink />, key: '[Текст ссылки](https://example.com)'}
 ]
+
+
 
 export const Header = () => {
   return (
