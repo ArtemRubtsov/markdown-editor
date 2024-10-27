@@ -1,15 +1,19 @@
+import { useAppDispatch } from "../../../app/hooks"
+import { titleAdded } from "../../../features/editor"
+
 type IconProps = {
-    id: string
+    md: string
     icon: JSX.Element
   }
   
-  export const Icon = ({ id, icon }: IconProps) => {
-    const handlerElement = ( id: string) => {
-      console.log(`Icon clicked: ${id}`)
+  export const Icon = ({ md, icon }: IconProps) => {
+    const dispatch = useAppDispatch()
+    const handleElement = ( md: string) => {
+      dispatch(titleAdded({md: md}))
     }
   
     return (
-      <li onClick={() => handlerElement(id)}>
+      <li onClick={() => handleElement(md)}>
         {icon}
       </li>
     )

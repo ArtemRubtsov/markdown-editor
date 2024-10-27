@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { Markdown, titleAdded } from "../editor"
 
 type Mark = {
     mark: string
@@ -15,6 +16,12 @@ const markSlice = createSlice({
         changeMark: (state, action: PayloadAction<string>) => {
             state.mark = action.payload
         }
+    },
+    extraReducers: build => {
+        build
+            .addCase(titleAdded, (state, action: PayloadAction<Markdown>) => {
+                state.mark = state.mark + action.payload.md
+            })
     }
 })
 

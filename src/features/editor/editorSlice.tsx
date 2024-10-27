@@ -1,33 +1,25 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type State = {
-    h1: string
-    h2: string
-    h3: string
-    h4: string
-    h5: string
-    h6: string
+export type State = {
+    markdown: {
+        md:  string
+    } 
 }
+
+export type Markdown = typeof state.markdown
+
 const state:  State = {
-    h1: '#',
-    h2: '##',
-    h3: '###',
-    h4: '####',
-    h5: '#####',
-    h6: '######',
+    markdown: {
+        md: ''
+    }
 }
-
-export type Edit = {
-    h1: string
-}
-
 
 const editorSlice = createSlice({
     name: "editor",
     initialState: state,
     reducers: {
-        titleAdded(state, action: PayloadAction<Edit>){
-            state.h1 = action.payload.h1
+        titleAdded(state, action: PayloadAction<Markdown>){
+             state.markdown = action.payload
         }
     }
 })
