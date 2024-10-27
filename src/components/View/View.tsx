@@ -5,6 +5,7 @@ type ViewProps = {
 }
 
 export const View = ({children}: ViewProps) => {
+
   return (
     <div className={s.view}>{children}</div>
   )
