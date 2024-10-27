@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type State = {
     h1: string
@@ -9,20 +9,30 @@ type State = {
     h6: string
 }
 const state:  State = {
-    h1: '',
-    h2: '',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
+    h1: '#',
+    h2: '##',
+    h3: '###',
+    h4: '####',
+    h5: '#####',
+    h6: '######',
 }
 
+export type Edit = {
+    h1: string
+}
 
 
 const editorSlice = createSlice({
     name: "editor",
     initialState: state,
-    reducers: {}
+    reducers: {
+        titleAdded(state, action: PayloadAction<Edit>){
+            state.h1 = action.payload.h1
+        }
+    }
 })
+
+export const { titleAdded } =  editorSlice.actions
+
 
 export default editorSlice.reducer

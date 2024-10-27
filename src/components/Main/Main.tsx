@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { View } from "../View/View";
 import Markdown, { Components } from "react-markdown";
 import { Editor } from "../Editor/Editor";
@@ -6,6 +5,7 @@ import s from './main.module.scss';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import React from "react";
+import { useAppSelector } from "../../app/hooks";
 
 type CodeParams = {
   children?: React.ReactNode
@@ -14,7 +14,7 @@ type CodeParams = {
 }
 
 export const Main = () => {
-    const [mark, setMark] = useState<string>('');
+    const mark = useAppSelector(state => state.mark.mark)
 
     const codeParams = (props: CodeParams) => {
         const { children, className, ...rest } = props;
@@ -37,7 +37,7 @@ export const Main = () => {
 
     return (
         <main className={s.main}>
-            <Editor mark={mark} setMark={setMark} />
+            <Editor mark={mark}/>
             <View>
                 <Markdown components={{ code: codeParams }}>
                     {mark}

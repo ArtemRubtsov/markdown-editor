@@ -1,15 +1,17 @@
 import React from 'react';
 import s from './edit.module.scss'
+import { useAppDispatch } from '../../app/hooks';
+import { changeMark } from '../../features/mark';
 
 type EditProps = {
-  setMark:  (mark: string) => void;
   mark: string
 }
 
-export const Editor = ({mark, setMark}: EditProps) => {
+export const Editor = ({mark}: EditProps) => {
+  const dispatch = useAppDispatch()
 
   const handleMarkdown = (e:  React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMark(e.currentTarget.value)
+      dispatch(changeMark(e.currentTarget.value))
   } 
 
   
