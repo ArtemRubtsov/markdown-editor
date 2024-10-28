@@ -14,5 +14,9 @@
             color: #7ce2fe;
         }
     }
+    @media (max-width: 560px){
+        flex-wrap: wrap;
+        gap: 15px;
+    }
     
 }
