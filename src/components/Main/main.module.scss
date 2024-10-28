@@ -6,5 +6,10 @@
     max-height: calc(100vh - 60px);
     width: 100%;
     overflow-y: auto; 
+    @media(max-width: 560px) {
+      flex-direction: row;
+      max-height:  calc(100vh - 100px);
+
+    }
   }
   

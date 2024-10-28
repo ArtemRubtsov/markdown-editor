@@ -10,5 +10,9 @@
         white-space: normal;   
         overflow-wrap: break-word; 
     }
+    @media(max-width: 560px) {
+        width: 100%;
+        min-height: 300px;
+    }
   }
   
