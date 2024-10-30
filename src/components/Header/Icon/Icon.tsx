@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../../app/hooks"
-import { titleAdded } from "../../../features/editor"
+import { markInsert } from "../../../features/editor"
 
 type IconProps = {
     md: string
@@ -9,7 +9,7 @@ type IconProps = {
   export const Icon = ({ md, icon }: IconProps) => {
     const dispatch = useAppDispatch()
     const handleElement = ( md: string) => {
-      dispatch(titleAdded({md: md}))
+      dispatch(markInsert({md: md}))
     }
   
     return (

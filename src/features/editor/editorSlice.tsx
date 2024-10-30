@@ -18,13 +18,16 @@ const editorSlice = createSlice({
     name: "editor",
     initialState: state,
     reducers: {
-        titleAdded(state, action: PayloadAction<Markdown>){
+        markInsert(state, action: PayloadAction<Markdown>){
              state.markdown = action.payload
+        },
+        keyBoard(state, action: PayloadAction<string>){
+            state.markdown.md += action.payload
         }
     }
 })
 
-export const { titleAdded } =  editorSlice.actions
+export const { markInsert, keyBoard } =  editorSlice.actions
 
 
 export default editorSlice.reducer
