@@ -14,9 +14,51 @@
             color: #7ce2fe;
         }
     }
+    .copy{
+        margin-left: 50px;
+        font-size: 16px;
+        font-family: bold;
+        padding: 5px;
+        border-radius: 3px;
+        transform: translateY(-3px);
+        &:hover{
+            color: #0ca2c1;
+        }
+    }
+    .copyAnimation{
+        margin-left: 50px;
+        font-size: 16px;
+        font-family: bold;
+        padding: 5px;
+        border-radius: 3px;
+        transform: translateY(-3px);
+        &:hover{
+            color: #0ca2c1;
+        }
+    }
+    .active{
+        margin-left: 50px;
+        font-size: 16px;
+        font-family: bold;
+        padding: 5px;
+        color: #0ca2c1;
+        transform: translateY(-3px);
+    }
     @media (max-width: 560px){
         flex-wrap: wrap;
         gap: 15px;
     }
-    
 }
+
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
