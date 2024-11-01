@@ -1,5 +1,5 @@
 import { BsTypeH1, BsTypeH2, BsTypeH3, BsTypeH4, BsTypeH5, BsTypeH6 } from 'react-icons/bs'
-import { FaBold, FaItalic, FaLink, FaList, FaRegCommentAlt } from 'react-icons/fa'
+import { FaBold, FaCopy, FaItalic, FaLink, FaList, FaRegCommentAlt, FaRegCopy } from 'react-icons/fa'
 import { GrBlockQuote, } from 'react-icons/gr'
 import { ImListNumbered } from 'react-icons/im'
 import { IoCodeSlashSharp, IoUnlink } from 'react-icons/io5'
@@ -7,6 +7,9 @@ import { CiImageOn } from 'react-icons/ci'
 import { Icon } from './Icon/Icon'
 import s from './header.module.scss'
 import { MdOutlineMinimize } from 'react-icons/md'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { setCopy } from '../../features/clipboard/clipboardSlice'
+
 
 const icons = [
   { component: <BsTypeH1 />, key: 'h1', md: '#' },
@@ -29,12 +32,27 @@ const icons = [
 ]
 
 export const Header = () => {
+  const mark = useAppSelector(state => state.mark.mark)
+  const clipboard = useAppSelector(state => state.clipboard.copy)
+  const dispatch = useAppDispatch()
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(mark)
+    setTimeout(() => {
+      dispatch(setCopy(true))
+      console.log('time')
+    }, 1500)
+    dispatch(setCopy(false))
+  }
+
   return (
     <ul className={s.ul}>
       {icons.map(({ component, key, md }) => (
         <Icon icon={component} key={key} md={md} />
       ))}
+      <button onClick={handleCopy} className={clipboard ? s.copyAnimation : s.copy && s.active}>
+        {clipboard ? <FaRegCopy /> : <FaCopy />}
+      </button>
     </ul>
   )
 }
-

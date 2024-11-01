@@ -17,7 +17,6 @@ export const Editor = ({mark}: EditProps) => {
   const keysToElem = ['b', 'i', '>', 'l', 'o', 'c', 'p', 'a', '/']
 
 
-  /// fix press b-i-o-l-a-p-c
   const handleOnKeyPress = (e: React.KeyboardEvent) => {
     if (e.altKey && keysToHeader.includes(e.key)) {
       e.preventDefault()
@@ -37,6 +36,5 @@ export const Editor = ({mark}: EditProps) => {
       <form className={s.form}>
           <textarea  className={s.textarea} placeholder='Enter your markdown' onKeyDown={handleOnKeyPress} onChange={handleMarkdown} value={mark} />
       </form>
-
   )
 }
