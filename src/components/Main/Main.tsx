@@ -16,8 +16,8 @@ type CodeParams = {
 export const Main = () => {
     const mark = useAppSelector(state => state.mark.mark)
 
-    const codeParams = (props: CodeParams) => {
-        const { children, className, ...rest } = props;
+    const codeParams = (params: CodeParams) => {
+        const { children, className, ...rest } = params;
         const match = /language-(\w+)/.exec(className || '');
         return match ? (
             <SyntaxHighlighter

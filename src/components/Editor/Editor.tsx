@@ -8,8 +8,6 @@ type EditProps = {
   mark: string
 }
 
-
-
 export const Editor = ({mark}: EditProps) => {
   const dispatch = useAppDispatch()
 
