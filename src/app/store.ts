@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import editorReducer from '../features/editor/editorSlice'
-import markReducer from '../features/mark/markSlice'
-import clipboardReducer from '../features/clipboard/clipboardSlice'
+import {editorReducer} from '../features/editor'
+import {markReducer} from '../features/mark'
+import {clipboardReducer} from '../features/clipboard'
 
 export const store = configureStore({
     reducer: {
