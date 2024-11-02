@@ -1,9 +1,9 @@
-import { Provider } from "react-redux"
-import { Container } from "./components/Container/Container"
-import { Header } from "./components/Header/Header"
-import { Main } from "./components/Main/Main"
-import { store } from "./app/store"
+import { Provider } from 'react-redux'
 
+import { store } from './app/store'
+import { Container } from './components/Container/Container'
+import { Header } from './components/Header/Header'
+import { Main } from './components/Main/Main'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Main />
       </Container>
-    </Provider>  
+    </Provider>
   )
 }
 

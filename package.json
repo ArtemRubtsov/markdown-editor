@@ -19,15 +19,15 @@
     "react-syntax-highlighter": "^15.6.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
     "@rubtsov/eslint-config": "^1.0.2",
+    "@rubtsov/prettier-config": "^1.0.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^8.51.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^3.6.1",
