@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux'
 
-import { store } from './app/store'
-import { Container } from './components/Container/Container'
-import { Header } from './components/Header/Header'
-import { Main } from './components/Main/Main'
+import { Container } from '../components/Container/Container'
+import { Header } from '../components/Header/Header'
+import { Main } from '../components/Main/Main'
+import { store } from './store'
 
 function App() {
   return (

@@ -1,22 +1,22 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export type State = {
-    copy: boolean
+  copy: boolean
 }
 
 const initialState: State = {
-    copy: true
+  copy: true,
 }
 
 const clipboardSlice = createSlice({
-    name: 'cliboard',
-    initialState,
-    reducers: {
-        setCopy(state, action: PayloadAction<boolean>){
-            state.copy = action.payload
-        }
-    }
+  initialState,
+  name: 'cliboard',
+  reducers: {
+    setCopy(state, action: PayloadAction<boolean>) {
+      state.copy = action.payload
+    },
+  },
 })
 
-export const {  setCopy } = clipboardSlice.actions
+export const { setCopy } = clipboardSlice.actions
 export default clipboardSlice.reducer

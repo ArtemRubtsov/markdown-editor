@@ -1,14 +1,15 @@
-import { configureStore } from "@reduxjs/toolkit";
-import {editorReducer} from '../features/editor'
-import {markReducer} from '../features/mark'
-import {clipboardReducer} from '../features/clipboard'
+import { configureStore } from '@reduxjs/toolkit'
+
+import { clipboardReducer } from '../features/clipboard'
+import { editorReducer } from '../features/editor'
+import { markReducer } from '../features/mark'
 
 export const store = configureStore({
-    reducer: {
-        mark: markReducer,
-        editor:  editorReducer,
-        clipboard: clipboardReducer
-    }
+  reducer: {
+    clipboard: clipboardReducer,
+    editor: editorReducer,
+    mark: markReducer,
+  },
 })
 
 export type AppStore = typeof store
