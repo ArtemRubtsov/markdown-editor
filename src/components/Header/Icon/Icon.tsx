@@ -1,21 +1,18 @@
-import { useAppDispatch } from "../../../app/hooks"
-import { markInsert } from "../../../features/editor"
+import React from 'react'
+
+import { useAppDispatch } from '../../../app/hooks'
+import { markInsert } from '../../../features/editor'
 
 type IconProps = {
-    md: string
-    icon: JSX.Element
+  icon: React.JSX.Element
+  md: string
+}
+
+export const Icon = ({ icon, md }: IconProps) => {
+  const dispatch = useAppDispatch()
+  const handleElement = (md: string) => {
+    dispatch(markInsert({ md: md }))
   }
-  
-  export const Icon = ({ md, icon }: IconProps) => {
-    const dispatch = useAppDispatch()
-    const handleElement = ( md: string) => {
-      dispatch(markInsert({md: md}))
-    }
-  
-    return (
-      <li onClick={() => handleElement(md)}>
-        {icon}
-      </li>
-    )
-  }
-  
+
+  return <li onClick={() => handleElement(md)}>{icon}</li>
+}
