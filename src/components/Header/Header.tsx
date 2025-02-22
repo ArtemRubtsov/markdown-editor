@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify'
+
 import { BsTypeH1, BsTypeH2, BsTypeH3, BsTypeH4, BsTypeH5, BsTypeH6 } from 'react-icons/bs'
 import { CiImageOn } from 'react-icons/ci'
 import {
@@ -48,18 +50,31 @@ const icons = [
   },
 ]
 
-export const Header = () => {
+type HeaderProps = {
+  mode: 'markdown' | 'mdx'
+  setMode: (mode: 'markdown' | 'mdx') => void
+}
+
+export const Header = ({ mode, setMode }: HeaderProps) => {
   const mark = useAppSelector(state => state.mark.mark)
   const clipboard = useAppSelector(state => state.clipboard.copy)
   const dispatch = useAppDispatch()
 
   const handleCopy = () => {
     navigator.clipboard.writeText(mark)
+    notify()
     setTimeout(() => {
       dispatch(setCopy(true))
     }, 1500)
     dispatch(setCopy(false))
   }
+  const notify = () =>
+    toast.info('Wow so easy!', {
+      autoClose: 3000,
+      position: 'bottom-center',
+    })
+
+  const changeMode = () => setMode(mode === 'markdown' ? 'mdx' : 'markdown')
 
   return (
     <ul className={s.ul}>
@@ -72,6 +87,9 @@ export const Header = () => {
         type={'button'}
       >
         {clipboard ? <FaRegCopy /> : <FaCopy />}
+      </button>
+      <button onClick={changeMode} type={'button'}>
+        {mode === 'markdown' ? 'mdx' : 'markdown'}
       </button>
     </ul>
   )
