@@ -5,12 +5,14 @@ import s from './edit.module.scss'
 import { useAppDispatch } from '../../app/hooks'
 import { keyBoard } from '../../features/editor'
 import { changeMark } from '../../features/mark'
+import { ContainerMdx } from '../ContainerMDX/ContainerMdx'
 
 type EditProps = {
   mark: string
+  mode: 'markdown' | 'mdx'
 }
 
-export const Editor = ({ mark }: EditProps) => {
+export const Editor = ({ mark, mode }: EditProps) => {
   const dispatch = useAppDispatch()
 
   const keysToHeader = ['1', '2', '3', '4', '5', '6']
@@ -33,13 +35,17 @@ export const Editor = ({ mark }: EditProps) => {
 
   return (
     <form className={s.form}>
-      <textarea
-        className={s.textarea}
-        onChange={handleMarkdown}
-        onKeyDown={handleOnKeyPress}
-        placeholder={'Enter your markdown'}
-        value={mark}
-      />
+      {mode === 'markdown' ? (
+        <textarea
+          className={s.textarea}
+          onChange={handleMarkdown}
+          onKeyDown={handleOnKeyPress}
+          placeholder={'Enter your markdown'}
+          value={mark}
+        />
+      ) : (
+        <ContainerMdx>{mark}</ContainerMdx>
+      )}
     </form>
   )
 }

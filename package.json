@@ -10,13 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
+    "@react-router/dev": "^7.2.0",
     "@reduxjs/toolkit": "^2.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-markdown": "^9.0.1",
     "react-redux": "^9.1.2",
-    "react-syntax-highlighter": "^15.6.1"
+    "react-router": "^7.2.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "react-toastify": "^11.0.3"
   },
   "devDependencies": {
     "@rubtsov/eslint-config": "^1.0.2",

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Markdown, { Components } from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
@@ -7,6 +7,7 @@ import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import s from './main.module.scss'
 
 import { useAppSelector } from '../../app/hooks'
+import { ContainerMdx } from '../ContainerMDX/ContainerMdx'
 import { Editor } from '../Editor/Editor'
 import { View } from '../View/View'
 
@@ -15,8 +16,11 @@ type CodeParams = {
   className?: string | undefined
   components?: Components | undefined
 }
+type MainProps = {
+  mode: 'markdown' | 'mdx'
+}
 
-export const Main = () => {
+export const Main = ({ mode }: MainProps) => {
   const mark = useAppSelector(state => state.mark.mark)
 
   const codeParams = (params: CodeParams) => {
@@ -36,9 +40,13 @@ export const Main = () => {
 
   return (
     <main className={s.main}>
-      <Editor mark={mark} />
+      <Editor mark={mark} mode={'markdown'} />
       <View>
-        <Markdown components={{ code: codeParams }}>{mark}</Markdown>
+        {mode === 'markdown' ? (
+          <Markdown components={{ code: codeParams }}>{mark}</Markdown>
+        ) : (
+          <ContainerMdx>{mark}</ContainerMdx>
+        )}
       </View>
     </main>
   )
