@@ -4,10 +4,9 @@ import styles from './switch.module.scss'
 
 type SwitchProps = {
   changeMode: () => void
-  mode: 'markdown' | 'mdx'
 }
 
-const SwitchMode = ({ changeMode, mode }: SwitchProps) => (
+const SwitchMode = ({ changeMode }: SwitchProps) => (
   <form>
     <div style={{ alignItems: 'center', display: 'flex' }}>
       <label className={styles.Label} htmlFor={'airplane-mode'} style={{ paddingRight: 15 }}>
