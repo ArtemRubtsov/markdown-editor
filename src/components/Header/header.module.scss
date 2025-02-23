@@ -1,9 +1,9 @@
 .ul{
     display: flex;
     justify-content: start;
+    align-items: center;
     gap:  10px;
     padding: 15px;
-    // background-color:  #e5e3ef;
     background-color:  #fcb32c;
     color: #010409;
     list-style: none;
@@ -46,6 +46,34 @@
         color: #0ca2c1;
         transform: translateY(-3px);
     }
+
+    .mode{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #010409;
+        color: #fcb32c;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 5px;
+        border-radius: 3px;
+    }
+    .modeActive{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fcb32c;
+        border: 1px solid #010409;
+        color: #010409;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 5px;
+        border-radius: 3px;
+    }
+    @media(max-width: 860px) {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
     @media (max-width: 560px){
         flex-wrap: wrap;
         gap: 15px;

@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify'
 
+import clsx from 'clsx'
 import { BsTypeH1, BsTypeH2, BsTypeH3, BsTypeH4, BsTypeH5, BsTypeH6 } from 'react-icons/bs'
 import { CiImageOn } from 'react-icons/ci'
 import {
@@ -20,6 +21,7 @@ import s from './header.module.scss'
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { setCopy } from '../../features/clipboard/clipboardSlice'
+import SwitchMode from '../Switch/Switch'
 import { Icon } from './Icon/Icon'
 
 const icons = [
@@ -69,7 +71,7 @@ export const Header = ({ mode, setMode }: HeaderProps) => {
     dispatch(setCopy(false))
   }
   const notify = () =>
-    toast.info('Wow so easy!', {
+    toast.info('Copied successfully!', {
       autoClose: 3000,
       position: 'bottom-center',
     })
@@ -88,9 +90,10 @@ export const Header = ({ mode, setMode }: HeaderProps) => {
       >
         {clipboard ? <FaRegCopy /> : <FaCopy />}
       </button>
-      <button onClick={changeMode} type={'button'}>
-        {mode === 'markdown' ? 'mdx' : 'markdown'}
-      </button>
+      <SwitchMode changeMode={changeMode} mode={mode} />
+      <span className={clsx(mode === 'markdown' && s.mode, mode === 'mdx' && s.modeActive)}>
+        {mode}
+      </span>
     </ul>
   )
 }
