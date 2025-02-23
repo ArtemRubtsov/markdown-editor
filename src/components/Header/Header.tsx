@@ -90,7 +90,7 @@ export const Header = ({ mode, setMode }: HeaderProps) => {
       >
         {clipboard ? <FaRegCopy /> : <FaCopy />}
       </button>
-      <SwitchMode changeMode={changeMode} mode={mode} />
+      <SwitchMode changeMode={changeMode} />
       <span className={clsx(mode === 'markdown' && s.mode, mode === 'mdx' && s.modeActive)}>
         {mode}
       </span>
