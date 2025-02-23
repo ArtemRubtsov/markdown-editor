@@ -14,7 +14,7 @@ function App() {
     <Provider store={store}>
       <Container>
         <Header mode={mode} setMode={setMode} />
-        <Main mode={'markdown'} />
+        <Main mode={mode} />
         <ToastContainer
           draggable={'touch'}
           draggablePercent={60}

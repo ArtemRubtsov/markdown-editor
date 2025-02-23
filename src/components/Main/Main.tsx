@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Markdown, { Components } from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
